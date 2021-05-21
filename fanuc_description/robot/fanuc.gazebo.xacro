@@ -1,0 +1,281 @@
+<?xml version="1.0" ?>
+<robot name="fanuc">
+    <link name="world" />
+    <joint name="virtual_joint" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+    </joint>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_0.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_0.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <!--
+         LINK 1 
+    -->
+    <link name="link1">
+        <visual>
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_1.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_1.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint1" type="revolute">
+        <parent link="base_link" />
+        <child link="link1" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.967" upper="2.967" effort="12" velocity="2.443" />
+    </joint>
+    <!-- 
+        LINK 2 
+    -->
+    <link name="link2">
+        <visual>
+            <origin xyz="-0.15 -0.525 0" rpy="-1.57 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_2.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.15 -0.525 0" rpy="-1.57 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_2.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint_2" type="revolute">
+        <parent link="link1" />
+        <child link="link2" />
+        <origin xyz="0.15 0.0 0.525" rpy="+1.57 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.4835" upper="2.7052" effort="12" velocity="2.792" />
+    </joint>
+    <!-- 
+        LINK 3
+     -->
+    <link name="link3">
+        <visual>
+            <origin xyz="-1.3 0.15 0" rpy="1.57 3.14 1.57" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_3.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-1.3 0.15 0" rpy="1.57 3.14 1.57" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_3.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint_3" type="revolute">
+        <parent link="link2" />
+        <child link="link3" />
+        <origin xyz="0 0.79 0" rpy="0 0 1.57" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.5707" upper="1.3962" effort="12" velocity="2.967" />
+    </joint>
+    <!-- 
+        LINK 4
+     -->
+    <link name="link4">
+        <visual>
+            <origin xyz="1.475 0 -0.3" rpy="0 -1.5708 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_4.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="1.475 0 -0.3" rpy="0 -1.5708 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_4.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint_4" type="revolute">
+        <parent link="link3" />
+        <child link="link4" />
+        <origin xyz="0.15 -0.15 0" rpy="1.57 0 0 " />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.6651" upper="3.6651" effort="11.7" velocity="10.47" />
+    </joint>
+    <!-- 
+        LINK 5
+     -->
+    <link name="link5">
+        <visual>
+            <origin xyz="-1.45 -1.166 0" rpy="1.5708 0 1.5708" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_5.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-1.45 -1.166 0" rpy="1.5708 0 1.5708" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_5.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint_5" type="revolute">
+        <parent link="link4" />
+        <child link="link5" />
+        <origin xyz="0 0 0.86" rpy="+1.57 0 -3.14" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2689" upper="2.2689" effort="11.7" velocity="6.545" />
+    </joint>
+    <!-- 
+        LINK 6
+     -->
+    <link name="link6">
+        <visual>
+            <origin xyz="0.01 0 -0.05" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/visual/link_6.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://fanuc_description/meshes/collision/link_6.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="joint_6" type="revolute">
+        <parent link="link5" />
+        <child link="link6" />
+        <origin xyz="0 0 0" rpy="-1.57 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-47.1238" upper="47.1238" effort="5.8" velocity="9.6" />
+    </joint>
+    <!-- 
+        LINK 7
+     -->
+    <link name="link7" />
+    <joint name="flange" type="fixed">
+        <parent link="link6" />
+        <child link="link7" />
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+    <!--  -->
+    
+<transmission name="trans_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_5_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_6_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
